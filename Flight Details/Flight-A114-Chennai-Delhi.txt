@@ -1,1 +1,2 @@
 Business : {2, 2, 2}, 12
+Economy : {0}, 0

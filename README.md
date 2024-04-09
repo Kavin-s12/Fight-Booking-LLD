@@ -1,17 +1,15 @@
 **Getting Started**
-    Download and Extract the ZIP File: Download the ZIP file containing the program code and extract it to a directory of your choice.
+Download and Extract the ZIP File: Download the ZIP file containing the program code and extract it to a directory of your choice.The "refactored" folder contains code that has undergone updates or improvements, particularly focusing on adhering to design principles and patterns compared to the previous version.
 
 **Check Python Installation**
-    Before running the program, ensure that Python is installed on your system.
+Before running the program, ensure that Python is installed on your system.
 
 **Run the Program:**
-    Open your terminal or command prompt and navigate to the extracted directory and make sure python is installed already. Run the program using Python in LLD folder.
-        command: python main.py
-
-        (or) double click on the main.py file
+Open your terminal or command prompt and navigate to the extracted directory and make sure python is installed already. Run the program using Python in Refactored folder.
+command: python main.py (or) double click on the main.py file
 
 **Usage**
-    Upon running the program, you will be presented with a menu where you can select various options:
+Upon running the program, you will be presented with a menu where you can select various options:
 
         1. List flight details: View available flights.
         2. Flight Booking: Book a flight, seat class, meal preference, and seats.

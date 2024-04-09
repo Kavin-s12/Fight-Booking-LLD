@@ -1,17 +1,27 @@
 from FlightDesign import Flight
-from FlightManager import FlightManager
+from abc import ABC, abstractmethod
 
-class User:
+class UserSearch(ABC):
+    @abstractmethod
+    def search_available_tickets(self):
+        pass
 
-    def __init__(self,name):
+class FlightBooking(ABC):
+    @abstractmethod
+    def book_flight(self, flight):
+        pass
+
+class User(UserSearch, FlightBooking):
+
+    def __init__(self,name,flightManager):
         self.name = name
+        self.flightManager = flightManager
         self.booking_history = {}
 
     def search_available_tickets(self):
         print("a. filter flights using source and destination\nb. Filter only business class flights")
         subOption = input("Enter a or b : ").strip().lower()
 
-        filter = []
         class_ = None
         selected_flight = None
         if (subOption == 'a'):
@@ -19,11 +29,11 @@ class User:
             # filter based on source and destination option 1
             source = input("Enter source : ").strip().lower()
             destination = input("Enter destination : ").strip().lower()
-            selected_flight = FlightManager().search_source_and_destination(source,destination)
+            selected_flight = self.flightManager.search_source_and_destination(source,destination)
 
 
         elif (subOption == 'b'):
-            selected_flight = FlightManager().search_class('business')
+            selected_flight = self.flightManager.search_class('business')
             class_ = 'business'
         else:
             print('please try again')

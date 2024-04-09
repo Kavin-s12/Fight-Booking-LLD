@@ -1,4 +1,5 @@
-from LoadFlightDetails import LoadFlightDetails
+# from LoadFlightDetails import LoadFlightDetails
+from FlightDetailsLoader import FlightDetailsLoader
 from FlightManager import FlightManager
 from User import User
 
@@ -14,9 +15,10 @@ def close_option():
     return False
 
 if __name__== '__main__':
-    LoadFlightDetails().load_flight("../Flight Details")
+    flightManager = FlightManager()
+    FlightDetailsLoader(flightManager).load_flight_from_file("../Flight Details")    
     name = input('Enter your name : ')
-    testUser = User(name)
+    testUser = User(name,flightManager)
     print("User name: ",testUser.name)
 
 
